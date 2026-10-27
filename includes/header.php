@@ -12,9 +12,6 @@ if($_SESSION) {
             <a href='connexion.php'>Connexion</a>
             </nav>";
 }
-
-
-
 ?>
 
 

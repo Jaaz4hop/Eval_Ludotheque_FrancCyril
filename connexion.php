@@ -8,7 +8,7 @@ $message = '';
 if(isset($_POST['submit'])) {
     if(!empty($_POST['email']) && !empty($_POST['password'])) {
         if(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)) {
-            if(strlen($_POST['password']) >= 12) {
+            if(mb_strlen($_POST['password'], 'UTF-8') >= 12) {
                  $email = trim($_POST['email']);
                  $password = $_POST['password'];
 
@@ -34,7 +34,7 @@ if(isset($_POST['submit'])) {
                         $message = "Email et/ou mot de passe incorrect ";
                     }
                 }catch(EXCEPTION $error){
-                    die($error->getMessage());
+                    $message = "Une erreur est survenue lors de la tentative de connexion.";
                 }
             } else {
                 $message = 'Votre mot de passe doit contenir au moins 12 caracatères.';

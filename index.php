@@ -30,7 +30,7 @@ try {
 
 
 }catch(EXCEPTION $error){
-    die($error->getMessage());
+    $message = "Une erreur est survenue lors de la tentative d'affichage du contenu.";
 }
 
 ?>

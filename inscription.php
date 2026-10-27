@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
                             $message = 'Cet email est déjà utilisé par un utilisateur.';
                         }
                     }catch(EXCEPTION $error){
-                        die($error->getMessage());
+                        $message = "Une erreur est survenue pendant l'enregistrement, veuillez réessayez plus tard.";
                     }
                 } else {
                     $message = "Le mot de passe et sa vérification ne correspondent pas.";
