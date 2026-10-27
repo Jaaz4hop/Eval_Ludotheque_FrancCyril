@@ -1,3 +1,24 @@
+<?php
+if($_SESSION) {
+    $nav = "Bonjour {$_SESSION['prenom']}<nav>
+            <a href='index.php'>Accueil</a>
+            <a href='ajout-jeu.php'>Ajouter un jeu</a>
+            <a href='deconnexion.php'>Se déconnecter</a>
+            </nav>";
+} else {
+    $nav = "<nav>
+            <a href='index.php'>Accueil</a>
+            <a href='inscription.php'>Inscription</a>
+            <a href='connexion.php'>Connexion</a>
+            </nav>";
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,10 +29,6 @@
 </head>
 <body>
     <header>
-        <h1>Titre</h1>
-        <nav>
-            <a href="index.php">Accueil</a>
-            <a href="inscription.php">Inscription</a>
-            <a href="connexion.php">Connexion</a>
-        </nav>
+        <h1>Ludothèque le Dé Fêlé</h1>
+            <?php echo $nav; ?>
     </header>
